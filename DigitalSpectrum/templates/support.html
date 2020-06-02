@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+<body style="background-color: black;">
+
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-3 sidenav hidden-xs">
+        <h2>Digital Spectrum</h2>
+        <ul class="nav nav-pills nav-stacked">
+          <li class="active"><a href="#section1">Support</a></li>
+          <li><a href="#section2">FAQ</a></li>
+          <li><a href="#section2">Chat with an Agent</a></li>
+
+        </ul><br>
+      </div>
+      <br>
+
+      <div class="col-sm-8">
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="well">
+              <h4>Account Assistance</h4>
+
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="well">
+              <h4>System Assistance</h4>
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-sm-8">
+            <div class="well">
+              <p>Text</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="well">
+              <p>Text</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+{% endblock %}

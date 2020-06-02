@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<body>
+
+
+  <div class="row" style="margin-right: 2%; margin-left: 2%;">
+    <div class="col-sm-3 ">
+      <div class="w3-center">
+        <h2>Digital Spectrum</h2>
+
+
+
+      </div>
+      <div>
+        <div class="col-sm-12 sidenav hidden-xs">
+          <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="#section1">Overall</a></li>
+            <li ><a href="{% url 'crops' %}">Crops</a></li>
+
+            <hr>
+
+            {% for sys in systems %}
+            <h2>{{ sys.name }}</h2>
+            <br>
+
+              {% for item in units %}
+              <h4>{{ item.name }}</h4>
+                {% for sense in item.sensor.all %}
+                <li id='subcat'><a href="{% url 'sensor' item.id %}">{{ sense.name }}</a></li>
+                {% endfor %}
+              {% endfor %}
+            {% endfor %}
+
+          </ul><br>
+          <hr>
+
+        </div>
+        <p>
+          <span class="label label-default">Admin</span>
+          <span class="label label-primary">Testing</span>
+        </p>
+      </div>
+
+      <!-- <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p> -->
+    </div>
+      <div class="col-sm-9">
+        <div class="w3-center">
+          <hr>
+
+          <div class="container">
+            <ul class="nav nav-pills">
+              <li class="active"><a data-toggle="pill" href="#home"><h1><span class="glyphicon glyphicon-hdd"></h1></a></li>
+              <li><a data-toggle="pill" href="#menu1"><h1><span class="glyphicon glyphicon-equalizer"></span></h1></a></li>
+              <li><a data-toggle="pill" href="#menu2"><h1><span class="glyphicon glyphicon-leaf"></span></h1></a></li>
+              <li><a data-toggle="pill" href="#menu3"><h1><span class="glyphicon glyphicon-heart"></span></h1></a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div id="home" class="tab-pane fade in active">
+                <h2>Sensors</h2>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="well">
+                      <h4>TDS</h4>
+                      <div class="airviz" id="chart-airTemp">
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="well">
+                      <h4>Water Temperature</h4>
+                      <div class="airviz" id="chart-waterTemp">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="well">
+                      <h4>pH</h4>
+                      <div class="airviz" id="chart-airTemp">
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="well">
+                      <h4>Water Output</h4>
+                      <div class="airviz" id="chart-waterTemp">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="well">
+                      <p>Active Sensors</p>
+                      <h1>2</h1>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="well">
+                      <p>Performance Rating</p>
+                      <h1>92%</h1>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="well">
+                      <p>Crops</p>
+                      <h1>6</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="menu1" class="tab-pane fade">
+                <h2>Sensors</h2>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="well">
+                      <h4>TDS</h4>
+                      <div class="airviz" id="chart-airTemp">
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="well">
+                      <h4>Water Temperature</h4>
+                      <div class="airviz" id="chart-waterTemp">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="menu2" class="tab-pane fade">
+                <h2>CROPS</h2>
+                <div class="row">
+
+                  {% for crop in crops %}
+                    <div class="col-sm-1">
+                      <div class="well" style="background-color: green;">
+                        <h4>{{ crop.name }}</h4>
+                        <span class="glyphicon glyphicon-leaf"></span>
+
+                      </div>
+                    </div>
+                  {% endfor %}
+
+                </div>              </div>
+              <div id="menu3" class="tab-pane fade">
+                <h3>Favorites</h3>
+                <p>Keep track of your favorite crops!</p>
+              </div>
+            </div>
+          </div>
+
+
+          <hr>
+          </div>
+          </div>
+        </div>
+
+
+
+
+<!-- <footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer> -->
+
+</body>
+</html>
+
+{% endblock %}

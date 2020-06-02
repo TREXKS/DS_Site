@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="w3-row" >
+   <div class="w3-col m12 w3-center">
+      <h1 class="title">CART</h1>
+   </div>
+</div>
+<hr>
+<div class="">
+   `
+   <div class="w3-row" style="margin-left: 10%; margin-bottom: 1%;  color: black; font-size: 30px;">
+      <div class="w3-col m4">
+         <u>Item</u>
+      </div>
+      <div class="w3-col m3">
+         <u>Model Number</u>
+      </div>
+      <div class="w3-col m4  ">
+         <u>Price</u>
+      </div>
+   </div>
+   <div class="w3-row" style="margin-left: 10%;">
+      <div class="w3-col m4 ">
+         {% for item in checkout.cart.all %}
+         {% for item in item.cart_item.all %}
+         <p style="color: white;">  {{ item.name }}</p>
+         {% endfor %}
+         {% endfor %}
+      </div>
+      <div class="w3-col m3  "  style="margin-left: 1%;">
+         {% for item in checkout.cart.all %}
+         {% for item in item.cart_item.all %}
+         <p  style="color: white;"> {{ item.model_number }}</p>
+         {% endfor %}
+         {% endfor %}
+      </div>
+      <div class="w3-col m4  "  style="margin-left: 1%; color: white;">
+         {% for item in checkout.cart.all %}
+         {% for item in item.cart_item.all %}
+         <p style="color: white;"> ${{ item.price }}</p>
+         {% endfor %}
+         {% endfor %}
+      </div>
+   </div>
+
+
+</div>
+<hr>
+<div class=''>
+</div>
+<div class=''>
+   <p class ='total_title' style="color: white;" >Total: ${{ new_total }} </p>
+   <!-- <button class="btn" onclick='thanks()' type='submit'>Submit Order</button> -->
+</div>
+<button class="btn btn-outline-info" type='submit'><a id='purchase' href="{% url 'purchase' %}">PURCHASE</a>
+
+{% endblock %}

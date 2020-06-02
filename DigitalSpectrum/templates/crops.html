@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<body>
+
+
+  <div class="row" style="margin-right: 2%; margin-left: 2%;">
+    <div class="col-sm-3 ">
+      <div class="w3-center">
+        <h2>Crops</h2>
+
+
+
+      </div>
+      <div>
+        <div class="col-sm-12 sidenav hidden-xs">
+          <ul class="nav nav-pills nav-stacked">
+            <li><a href="{% url 'dash' %}">Overall</a></li>
+            <li  class="active"><a href="{% url 'crops' %}">Crops</a></li>
+
+            <hr>
+
+            {% for sys in systems %}
+            <h2>{{ sys.name }}</h2>
+            <br>
+
+              {% for item in units %}
+              <h4>{{ item.name }}</h4>
+                {% for sense in item.sensor.all %}
+                <li id='subcat'><a href="{% url 'sensor' item.id %}">{{ sense.name }}</a></li>
+                {% endfor %}
+              {% endfor %}
+            {% endfor %}
+
+          </ul><br>
+          <hr>
+
+        </div>
+        <p>
+          <span class="label label-default">Admin</span>
+          <span class="label label-primary">Testing</span>
+        </p>
+      </div>
+
+      <!-- <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p> -->
+    </div>
+      <div class="col-sm-9">
+        <div class="w3-center">
+          <hr>
+          <h2>CROPS</h2>
+
+
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="well">
+                <h4>Soil Unit</h4>
+
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="well">
+                <h4>Water Unit</h4>
+
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="well">
+                <h4>Air Unit</h4>
+
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+
+            </div>
+          </div>
+          <div class="row">
+
+
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="well">
+                <p>Active Sensors</p>
+                <h1>2</h1>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="well">
+                <p>Performance Rating</p>
+                <h1>92%</h1>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="well">
+                <p>Crops</p>
+                <h1>6</h1>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+
+          </div>
+          <hr>
+
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+
+            </div>
+            <div class="col-sm-6">
+
+            </div>
+          </div>
+
+
+          </div>
+        </div>
+
+
+
+
+<!-- <footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer> -->
+
+</body>
+</html>
+
+{% endblock %}

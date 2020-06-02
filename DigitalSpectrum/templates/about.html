@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<body style="background-color: black">
+<h2>
+<div class="">
+   <div class="col card" style="background-color: black">
+      <h1 class="card_title"></h1>
+      <p  id="about" style="color: white ;">Welcome to Hydrosphere</p>
+      <div id="about_logo"class='panel-body' style='color: black;'>
+         <img src="static/img/logo_small.jpg" class="img-circle"  width="400" height="300">
+      </div>
+
+      <div id="about_logo2"class='panel-body' style='color: black; display:none; '>
+         <img src="static/img/dial.jpg" class="img-circle">
+      </div>
+
+      <div id="about_logo3" class='panel-body row' style='color: black; display:none; margin-left: 23%;'>
+         <img src="static/img/ph.jpg" class="img-circle" width="200" height="200">
+         <img src="static/img/moist.jpg" class="img-circle"  width="200" height="200">
+         <img src="static/img/baro.jpg" class="img-circle"  width="200" height="200">
+         <img src="static/img/tds.jpg" class="img-circle"  width="200" height="200">
+         <img id="media_pic" src="static/img/hum.jpg" class="img-circle"  width="200" height="200">
+
+      </div>
+
+      <div id="about_logo4" class='panel-body' style='color: black; display:none;'>
+         <img src="static/img/logo_new.jpg" class="img-circle">
+      </div>
+      <div id="about_logo5" class='panel-body' style='color: black; display:none;'>
+         <img src="static/img/ph.jpg" class="img-circle">
+      </div>
+      <p id="about_small" style="color: white; display:none;">Monitors, Records, and Maintains your Crops</p>
+      <p id="about_small_2" style="color: white; display:none;">Isn't that something?</p>
+      <p id="about_small_3" style="color: white; display:none;">Keeping track of the ESSENTIAL Nutrients and Water needed for Optimal Growth</p>
+      <div id="about_logo6" class='panel-body' style='color: black; display:none;'>
+         <img src="static/img/sensor-set.jpg" class="img-rounded">
+      </div>
+   </div>
+</div>
+<break></break>
+
+<div class="" style="background-color: black; margin-bottom: 5%;margin-top: 5%;">
+   <h1 class="card_title"></h1>
+   <button id="aboutButton" onclick='about()' type='submit'>Next</button>
+   <button id="backButton" onclick='aboutSecond()' style='color: white; display:none;'>Next</button>
+   <a id="registerButton" href="{% url 'register' %}" style='color: white; display:none;' type='submit'>Register Today</a>
+   <a id="shopButton" href="{% url 'shop' %}" style='color: white; display:none; margin-top: 5%;' type='submit'>Perhaps, browse our shop?</a>
+   <a id="registerButton" href="{% url 'shop' %}" style='color: white; display:none;' type='submit'>REGISTER NOW</a>
+</div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<body >
+
+  <div class="container-fluid bg-1 text-center">
+    <h3 class="margin">Welcome!</h3>
+    <img src="static/img/logo_small.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+    <h3>{{user.first_name}}</h3>
+  </div>
+
+  <!-- Second Container -->
+  <div class="container-fluid bg-2 text-center">
+    <h3 class="margin"></h3>
+    <div class="col-sm-9" style="margin-left: 13%;">
+      <div class="w3-center">
+
+
+
+        <div class="tab-content mt-3">
+           <div class="row">
+             <div class="col-sm-4">
+               <div class="well">
+                 <h1><span class="glyphicon glyphicon-hdd"></span></h1>
+                 <p>5</p>
+
+               </div>
+             </div>
+             <div class="col-sm-4">
+               <div class="well">
+                 <h1><span class="glyphicon glyphicon-leaf"></span></h1>
+                 <p>5</p>
+               </div>
+             </div>
+             <div class="col-sm-4">
+               <div class="well">
+                 <h1><span class="glyphicon glyphicon-equalizer"></span></h1>
+                 <p>5</p>
+               </div>
+             </div>
+           </div>
+           <div class="row">
+             <div class="col-sm-4">
+               <div class="well">
+                 <h1><span class="glyphicon glyphicon-map-marker"></span></h1>
+                 <p>Boston</p>
+               </div>
+             </div>
+             <div class="col-sm-4">
+               <div class="well">
+                 <h1><span class="glyphicon glyphicon-envelope"></span></h1>
+                 <p>@aim.com</p>
+               </div>
+             </div>
+             <div class="col-sm-4">
+               <div class="well">
+                 <h1><span class="glyphicon glyphicon-phone"></span></h1>
+                 <p>@aim.com</p>
+               </div>
+             </div>
+           </div>
+
+
+  </div>
+
+
+
+  <!-- Third Container (Grid) -->
+  <div class="container-fluid bg-3 text-center">
+    <h3 class="margin">SUPPORT</h3><br>
+    <div class="row">
+      <div class="col-sm-4">
+        <p>MAINTENANCE</p>
+      </div>
+      <div class="col-sm-4">
+        <p>TECHNICAL SUPPORT</p>
+      </div>
+      <div class="col-sm-4">
+        <p>CALL CENTER</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<!-- <footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer> -->
+
+</body>
+</html>
+
+{% endblock %}

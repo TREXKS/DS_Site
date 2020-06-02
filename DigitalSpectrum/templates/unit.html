@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+
+
+
+<body style="background-color: black;">
+
+
+  <div class="row" style="margin-right: 5%; margin-left: 5%;">
+    <div class="col-sm-3 well">
+      <div class="well">
+        <div class="col-sm-12 sidenav hidden-xs">
+          <h2>UNIT</h2>
+          <ul class="nav nav-pills nav-stacked">
+            <hr>
+            {% for item in sensors %}
+              {% if sensor.name  ==  item.name  %}
+                  <li class="active"><a href="{% url 'sensor' item.id %}">{{ item.name }}</a></li>
+              {% elif sensor.name  !=  item.name %}
+                  <li ><a href="{% url 'sensor' item.id %}">{{ item.name }}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul><br>
+        </div>
+
+      </div>
+
+
+      <!-- <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p> -->
+    </div>
+      <div class="col-sm-9">
+        <div class="well">
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="well">
+                <h4>UNIT!</h4>
+                <div class="airviz" id="chart-airTemp">
+
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="well">
+                <h4>Average Water Output</h4>
+                <div class="airviz" id="chart-waterTemp">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="well">
+                <p>Active Sensors</p>
+                <h1>5</h1>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="well">
+                <p>Performance Rating</p>
+                <h1>95%</h1>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="well">
+                <p>Crops</p>
+                <h1>6</h1>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-sm-4">
+              <div class="well">
+                <p>Yield</p>
+                <h1>4.68%</h1>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="well">
+                <p>Light Cycle</p>
+                <h1>16hr</h1>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="well">
+                <p>Last Feed</p>
+                <h1>10:54 am: 7/20</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+
+
+
+<!-- <footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer> -->
+
+</body>
+</html>
+
+{% endblock %}
